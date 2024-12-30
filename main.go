@@ -1,5 +1,15 @@
 package main
 
+import "net/http"
+
+func main() {
+	http.Handle("/", http.FileServer(http.Dir("./static")))
+	http.ListenAndServe(":80", nil)
+}
+
+/* Step 2
+package main
+
 import "fmt"
 import "net/http"
 
